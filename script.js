@@ -23,16 +23,27 @@ numberInput.addEventListener("keydown", (e) => {
 const decimalToBinary = (input) => {
  let binary = "";
  
-
  if(input === 0) {
   binary = "0";
  };
 
  while (input > 0) {
   binary = (input % 2) + binary;
-  input = Math.floor(input / 2 );
+  input = Math.floor(input / 2);
    
  }
  result.innerText = binary;
 };
 
+// esta funcion es solo para observar como funciona una funcion recursiva y el call stack:
+const countDownAndUp = (number) => {
+  console.log(number);
+  if (number === 0) {
+    console.log("caso base alcanzado")
+    return
+  } else {
+    countDownAndUp(number - 1)
+    console.log(number)
+  };
+};
+countDownAndUp(3);
